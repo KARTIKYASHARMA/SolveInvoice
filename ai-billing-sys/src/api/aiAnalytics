@@ -1,0 +1,14 @@
+import axios from "axios";
+
+export const fetchInvoiceAiAnalytics = async (invoiceId, token) => {
+  const response = await axios.get(
+    `http://localhost:8080/api/invoices/ai/${invoiceId}/analyze`,
+    {
+      headers: {
+        Authorization: `Bearer ${token}`
+      }
+    }
+  );
+
+  return response.data;
+};
